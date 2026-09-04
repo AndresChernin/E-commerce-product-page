@@ -1,0 +1,146 @@
+.light-box-component{
+    width:100%;
+    
+    position:relative;
+
+    
+}
+.button-for-product-image{
+    border:none;
+    background-color: var(--body-bg-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-image-part{
+  width:100%;
+  aspect-ratio: 1/0.75;
+}
+
+.circle-prev-part,
+.circle-next-part{
+    height:50px;
+    width:50px;
+    background-color: white;
+    border-radius: 50%;
+    border:none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+.circle-prev-part{
+    position:absolute;
+    z-index:50;
+    left:5%;
+    top:50%;
+    
+    transform: translateY(-50%);
+}
+.circle-next-part{
+    position:absolute;
+    z-index:50;
+    right:5%;
+    top:50%;
+    
+    transform: translateY(-50%);
+}
+.prev-icon,
+.next-icon {
+    width: 12px;
+    height: 18px;
+
+    background-color: var(--almost-black-text);
+
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+.prev-icon {
+    transform: translateX(-2px);
+}
+
+.next-icon {
+    transform: translateX(2px);
+}
+.circle-prev-part:hover .prev-icon,
+.circle-next-part:hover .next-icon {
+    background-color: var(--orange-color);
+}
+.all-small-images{
+    display:none;
+}
+.thumbnail-img-part{
+
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border:5px solid var(--body-bg-color);
+    padding:0;
+    border:none;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.small-image{
+    border-radius: 6px;
+    padding:0;
+    width:100px;
+    height:100px;
+}
+.thumbnail-img-part:hover .small-image {
+    opacity: 0.4;
+}
+.clicked-button-for-small-image{
+     border:5px solid var(--orange-color);
+}
+.clicked-small-image{
+    opacity:0.5;
+   
+}
+@media(min-width:1000px){
+    .light-box-component{
+        width: 60vh;
+        
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    .product-image-part{
+        cursor: pointer;
+    }
+    .circle-prev-part,
+    .circle-next-part{
+        display:none;
+    }
+    .product-image-part{
+        border-radius: 10px;
+    }
+    /*.light-box-component {
+        flex: 0 1 20vh;
+        width: 60vw;
+        height: 60vh;
+        aspect-ratio: 1 / 1;
+    }*/
+
+    .product-image-part {
+        
+        width: 60vh;
+        height: 60vh;
+        object-fit: cover;
+        display: block;
+    }
+   .all-small-images{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    
+
+   }
+}

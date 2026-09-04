@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+  
+   <link rel="stylesheet" href=" styles-for-product-component.css">
+   <link rel="stylesheet" href=" styles-for-cart-component.css">
+   <link rel="stylesheet" href="styles-for-nav-components.css"> 
+    <link rel="stylesheet" href="styles-for-header-component-new.css"> 
+    <link rel="stylesheet" href="styles-for-main-container-new.css">
+    <link rel="stylesheet" href="styles-for-opened-light-box.css">
+    <link rel="stylesheet" href="/images/icon-close-white.svg" >  
+    <link rel="stylesheet" href="styles-for-light-box-component.css">
+    <link rel="stylesheet" href="/images/image-avatar.png"> 
+    <link rel="stylesheet" href="styles-for-order-component.css"> 
+    <link rel="stylesheet" href="styles-for-lower-component.css"> 
+  <link rel="stylesheet" href="./assets/images/icon-remove.jpg">
+   <link href=
+    "https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;700,800&display=swap" 
+    rel="stylesheet">
+    <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+  rel="stylesheet"
+>
+<link
+    href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;700;750;780;800&display=swap"
+    rel="stylesheet"
+>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    
+  </head>
+  <body>
+    
+    <div id="root"></div>
+    
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    
+<script src="NavigationComponentVertical.jsx" type="text/babel"></script>   
+<script src="NavigationComponentHorizontal.jsx" type="text/babel"></script>
+<script src="HeaderComponent.jsx" type="text/babel"></script>
+<script src="HeaderComponentNew.jsx" type="text/babel"></script>
+
+<script src="LightBoxComponent.jsx" type="text/babel"></script>
+<script src="OrderComponent.jsx" type="text/babel"></script>
+<script src="Order.js" type="text/babel"></script>
+<script src="CartComponent.jsx" type="text/babel"></script>
+<!--<script src="./images/icon-remove.jpg" type="text/babel"></script>-->
+<script src="LightBoxComponent2.jsx" type="text/babel"></script>
+<script src="OpenedLightBoxComponent.jsx" type="text/babel"></script>
+<script src="ProductComponent.jsx" type="text/babel"></script>
+<script src="LowerComponent.jsx" type="text/babel"></script>
+<script src="LowerSection.jsx" type="text/babel"></script>
+<script src="data.js" type="text/babel"></script>    
+<script src="ProductsModel.js" type="text/babel"></script> 
+<script src="ProductsController.js" type="text/babel"></script>  
+<script src="Product.js" type="text/babel"></script>
+<script src="User.js" type="text/babel"></script>
+    <script type="text/babel">
+      
+
+
+       function App()
+       {
+        const [showVerticalNavigation, setShowNavigation]=React.useState(false);
+        const[images, setImages]=React.useState([]);
+        const [number, setNumber]=React.useState(0);
+        const controllerRef = React.useRef(null);
+        const [cartOpen,setCartOpen]=React.useState(false);
+        const [lightBoxOpen, setLightBoxOpen]=React.useState(false);
+        if (controllerRef.current === null) {
+            const productsModel = new ProductsModel(Product);
+            const myUser=new User();
+            
+            controllerRef.current = new ProductsController(data,productsModel,myUser,Order);
+            controllerRef.current.createProducts();
+        }
+
+
+        const myController = controllerRef.current;
+        const products=myController.getProducts();
+        const orders=myController.getOrders();
+        const user=myController.getUser();
+        console.log(`products: ${JSON.stringify(products)}`);
+        console.log(`products: ${JSON.stringify(products[0].images)}`);
+         const [aktProduct, setAktProduct]=React.useState(products[0]);
+         const [aktUser, setAktUser]=React.useState(user);
+         const [aktOrders, setOrders]=React.useState(orders);
+         const[numberOfOrders, setNumberOfOrders]=React.useState(0);
+        function handleMenuIconClick(){
+          setShowNavigation(!showVerticalNavigation); 
+        }
+        
+       
+          function increaseNumber() {
+          setNumber(prev => prev + 1);
+          }
+
+           function decreaseNumber() {
+             setNumber(prev => Math.max(0, prev - 1));
+          }
+        function addToCart(){
+         myController.addOrder(aktProduct, number);
+         setOrders([...myController.getOrders()]);
+         setNumber(0);
+         const newOrders=myController.getOrders();
+         let counter=0;
+          for(let order of newOrders){
+             counter+=order.getNumber();
+          }
+          console.log(counter);
+         setNumberOfOrders(counter);  
+        }
+        function removeFromCart(){
+          myController.removeFromOrder(aktProduct, number);
+          setOrders([...myController.getOrders()]);
+          setNumber(0);
+          const newOrders=myController.getOrders();
+          let counter=0;
+          for(let order of newOrders){
+             counter+=order.getNumber();
+          }
+          setNumberOfOrders(counter);
+        }
+        function showCart(){
+          console.log(myController.showOrders());
+        }
+        function handleCartClick(){
+          setCartOpen(!cartOpen);
+        }
+        function deleteOrder(id){
+          console.log(myController.showOrders());
+          myController.removeOrder(id);
+          setOrders([...myController.getOrders()]);
+           const newOrders=myController.getOrders();
+          let counter=0;
+          for(let order of newOrders){
+             counter+=order.getNumber();
+          }
+          setNumberOfOrders(counter);
+        }
+        function handleBigImageClick(){
+           if (window.innerWidth < 1000) {
+           return;
+         }
+          setLightBoxOpen(true);
+        }
+        const[aktIndex, setIndex]=React.useState(0);
+        function handleNextClick(images){
+            console.log("click!");
+            let nextIndex=0;
+            if(aktIndex===images.length-1){
+             nextIndex=0;
+            }
+            else{
+             nextIndex=aktIndex+1;
+            }
+       setIndex(nextIndex);
+    }
+    function handlePrevClick(images){
+        console.log("click!");
+        let nextIndex=0;
+        if(aktIndex===0){
+           nextIndex=images.length-1;
+         }
+         else{
+           nextIndex=aktIndex-1;
+         }
+       setIndex(nextIndex);
+    }
+     return(
+          
+          <main className={`main-container ${
+           showVerticalNavigation? "menu-open" : ""}`}  >
+             <HeaderComponentNew 
+             iconMenuImg="/images/icon-menu.svg"
+             iconCloseImg="/images/icon-close.svg"
+             logoImg="/images/logo.svg"
+             cartImg="/images/icon-cart.svg" 
+             avatarImg="/images/image-avatar.png"
+             showVerticalNavigation={showVerticalNavigation}
+             handleMenuClick={handleMenuIconClick}
+             handleCartClick={handleCartClick}
+             numberOfOrders={numberOfOrders}
+             />
+             <section className="product-section">
+               <div className="product-section-inner-container">
+                <LightBoxComponent2
+                    aktIndex={aktIndex}
+                    iconPrev="./images/icon-previous.svg"
+                    iconNext="./images/icon-next.svg"
+                    product={aktProduct}
+                    handleBigImageClick={handleBigImageClick}
+                    handlePrevClick={handlePrevClick}
+                    handleNextClick={handleNextClick}
+                    setIndex={setIndex}/>
+                <ProductComponent product={aktProduct} 
+                    minusImg="/images/icon-minus.svg"
+                    plusImg="/images/icon-plus.svg"
+                    number={number}
+                    boxImg="/images/icon-cart-black.svg"
+                    remImg="./images/icon-remove.webp"
+                    increaseNumber={increaseNumber}
+                    decreaseNumber={decreaseNumber}
+                    addToCart={addToCart}
+                    removeFromCart={removeFromCart}/>
+              </div>
+             </section> 
+             {cartOpen && <CartComponent orders={aktUser.getOrders()}
+                                         deleteImg="/images/icon-delete.svg"
+                                         deleteOrder={deleteOrder}/>} 
+             {lightBoxOpen && <OpenedLightBoxComponent 
+                                  aktIndex={aktIndex}
+                                  iconPrev="./images/icon-previous.svg"
+                                  iconNext="./images/icon-next.svg"
+                                  product={aktProduct}
+                                  handleBigImageClick={handleBigImageClick}
+                                  handlePrevClick={handlePrevClick}
+                                  handleNextClick={handleNextClick}
+                                  setIndex={setIndex}
+                                  iconClose="/images/icon-close-white.svg"
+                                  setLightBoxOpen={setLightBoxOpen}/>}                            
+          </main>
+         )      
+         
+       }
+      const container = document.querySelector('#root');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

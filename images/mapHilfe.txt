@@ -1,0 +1,21 @@
+ {products.length === 0 ? (
+                    <p>your cart is empty</p>
+                ) : (
+                    products.map((product, index) => (
+                        <p key={index}>
+                            {product.printProduct()}
+                        </p>
+                    ))
+                )}
+
+
+<div className="all-images">
+              {fotos.map((foto,index)=>
+                   <button className="thumbnail-img-part">
+                    <img
+                     src={
+                         iconNext           
+                         }
+                     />  
+                    </button>
+            </div>
