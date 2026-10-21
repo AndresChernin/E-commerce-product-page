@@ -71,7 +71,7 @@
 .links-part-vertical a{
     cursor: pointer;
     text-align: left;
-    font-size:30px;
+    font-size:1.875rem;
     font-weight: 500;
     color:var(--gray-text);
     margin-left:2rem;
@@ -90,7 +90,7 @@
     outline-offset: 5px;
 }
 
-@media(min-width:1000px){
+@media(min-width:62.5rem){
     .links-part{
         display:flex;
     }

@@ -103,7 +103,7 @@
     opacity:0.5;
    
 }
-@media(min-width:1000px){
+@media(min-width:62.5rem){
     .light-box-component{
         width: 60vh;
         

@@ -145,7 +145,7 @@
     gap:1rem;
 
 }
-@media(min-width:1000px){
+@media(min-width:62.5rem){
     .product-component-inner-container{
         gap:2.5rem;
     }
