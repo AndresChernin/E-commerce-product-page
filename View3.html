@@ -111,10 +111,7 @@
          setOrders([...myController.getOrders()]);
          setNumber(0);
          const newOrders=myController.getOrders();
-         let counter=0;
-          for(let order of newOrders){
-             counter+=order.getNumber();
-          }
+         let counter=getOrdersCount(newOrders);
           console.log(counter);
          setNumberOfOrders(counter);  
         }
@@ -123,10 +120,7 @@
           setOrders([...myController.getOrders()]);
           setNumber(0);
           const newOrders=myController.getOrders();
-          let counter=0;
-          for(let order of newOrders){
-             counter+=order.getNumber();
-          }
+          let counter=getOrdersCount(newOrders);
           setNumberOfOrders(counter);
         }
         function showCart(){
@@ -140,10 +134,8 @@
           myController.removeOrder(id);
           setOrders([...myController.getOrders()]);
            const newOrders=myController.getOrders();
-          let counter=0;
-          for(let order of newOrders){
-             counter+=order.getNumber();
-          }
+          let counter=getOrdersCount(newOrders);
+          
           setNumberOfOrders(counter);
         }
         function handleBigImageClick(){
@@ -175,6 +167,14 @@
          }
        setIndex(nextIndex);
     }
+    function getOrdersCount(orders){
+      let counter=0;
+      for(let order of orders){
+             counter+=order.getNumber();
+          }
+      return counter;
+    }
+  
      return(
           
           <main className={`main-container ${
