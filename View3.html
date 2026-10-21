@@ -88,8 +88,7 @@
         const products=myController.getProducts();
         const orders=myController.getOrders();
         const user=myController.getUser();
-        console.log(`products: ${JSON.stringify(products)}`);
-        console.log(`products: ${JSON.stringify(products[0].images)}`);
+       
          const [aktProduct, setAktProduct]=React.useState(products[0]);
          const [aktUser, setAktUser]=React.useState(user);
          const [aktOrders, setOrders]=React.useState(orders);
@@ -112,7 +111,7 @@
          setNumber(0);
          const newOrders=myController.getOrders();
          let counter=getOrdersCount(newOrders);
-          console.log(counter);
+         
          setNumberOfOrders(counter);  
         }
         function removeFromCart(){
@@ -130,7 +129,7 @@
           setCartOpen(!cartOpen);
         }
         function deleteOrder(id){
-          console.log(myController.showOrders());
+          
           myController.removeOrder(id);
           setOrders([...myController.getOrders()]);
            const newOrders=myController.getOrders();
@@ -146,7 +145,7 @@
         }
         const[aktIndex, setIndex]=React.useState(0);
         function handleNextClick(images){
-            console.log("click!");
+            
             let nextIndex=0;
             if(aktIndex===images.length-1){
              nextIndex=0;
@@ -157,7 +156,7 @@
        setIndex(nextIndex);
     }
     function handlePrevClick(images){
-        console.log("click!");
+       
         let nextIndex=0;
         if(aktIndex===0){
            nextIndex=images.length-1;
