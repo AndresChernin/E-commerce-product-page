@@ -4,7 +4,7 @@ function LightBoxComponent({images,iconPrev, iconNext, product,
     const smallImages=product.getSmallImages();
     const[aktIndex, setIndex]=React.useState(0);
     function handleNextClick(){
-        console.log("click!");
+        
         let nextIndex=0;
        if(aktIndex===images.length-1){
           nextIndex=0;
@@ -15,7 +15,7 @@ function LightBoxComponent({images,iconPrev, iconNext, product,
        setIndex(nextIndex);
     }
     function handlePrevClick(){
-        console.log("click!");
+        
         let nextIndex=0;
        if(aktIndex===0){
           nextIndex=images.length-1;

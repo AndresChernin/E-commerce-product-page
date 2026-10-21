@@ -110,7 +110,7 @@
 .product-order-part p{
  font-weight: 700;
  color:var(--almost-black-text);
- font-size: 1.563;
+ font-size: 1.563rem;
 }
 .add-to-cart-button{
     flex:1;
