@@ -42,7 +42,7 @@
 .lower-part-thin-text{
     line-height: 1.5;
 }
-@media(min-width:1000px){
+@media(min-width:62.5rem){
     .lower-section-part{
         flex-direction: row;
         grid-column: 1 / 4;
