@@ -1,4 +1,4 @@
-function LightBoxComponent2({iconPrev, iconNext, product,aktIndex,
+function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
                             handleBigImageClick, handlePrevClick, handleNextClick,
                             setIndex}){
     const images=product.getBigImages();

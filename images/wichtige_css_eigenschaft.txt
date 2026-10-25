@@ -1,0 +1,13 @@
+min-width:0;
+Flex-Elemente haben standardmäßig häufig eine automatische Mindestbreite (min-width: auto). 
+Das kann dazu führen, dass ein Element nicht so weit schrumpft, wie du es erwartest. 
+Sein Inhalt kann dabei eine Mindestgröße vorgeben.
+
+.light-box-component {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+
+Das erlaubt der Lightbox selbst, bei der Aufteilung des verfügbaren Platzes kleiner zu werden, 
+auch wenn ihr Inhalt eine größere Breite beansprucht.

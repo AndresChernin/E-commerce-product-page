@@ -1,11 +1,31 @@
-function CartComponent({orders, deleteImg, deleteOrder}){
+function CartComponent({orders, deleteImg, deleteOrder, iconMenuCloseImg, closeCart}){
  return(
 
 <section className="cart-component">
  <div className="cart-component-header-part">
-    <p className="black-bold-text">
+    <p className="black-bold-text semi-big">
         Cart
     </p>
+    <button
+                    className="menu-button-cart cart-close"
+                    aria-label="Close menu"
+                    aria-expanded="true"
+                    aria-controls="mobile-navigation"
+                    onClick={()=>closeCart()}
+                  >
+                  <span className="menu-icon-cart-close-part-new"
+                       style={{
+                              maskImage: `url(${iconMenuCloseImg})`,
+                              WebkitMaskImage: `url(${iconMenuCloseImg})`
+                             }}>
+
+                    </span>  
+     {/*<img
+                   src={iconMenuCloseImg}
+                   className="menu-icon-close-part"
+                   alt=""
+     />*/}
+   </button>  
  </div>
  <div className="cart-component-lower-part">
     <div className="cart-component-product-part">
