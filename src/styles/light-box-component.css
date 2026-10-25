@@ -6,6 +6,7 @@
     
 }
 .button-for-product-image{
+    pointer-events: none;
     border:none;
     background-color: var(--body-bg-color);
     display:flex;
@@ -110,6 +111,9 @@
    
 }
 @media(min-width:62.5rem){
+    .button-for-product-image{
+         pointer-events: auto;
+    }
     .light-box-component{
         padding:0;
         
