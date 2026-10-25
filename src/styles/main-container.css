@@ -17,7 +17,7 @@
     --padding-top-mobile:5rem;
     --padding-top-desktop:10rem;
     /*-----------gaps--------------*/
-    --header-inner-container-mobile-gap:2rem;
+    --header-inner-container-mobile-gap:1rem;
 }
 html{
     min-height: 100vh;
@@ -83,7 +83,7 @@ body{
 
 
 p{
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 500;
     color:var(--gray-text);
     padding:0;
@@ -91,14 +91,14 @@ p{
     line-height: 1.5;
 }
 h1{
-    font-size: 1.25rem;
+    font-size: 1.10rem;
     color:var(--dark-gray-text);
     text-transform: uppercase;
     letter-spacing: 0.156rem;
     font-weight: 800;
 }
 h2{
-    font-size: 2.813rem;
+    font-size: 2rem;
     font-weight: 800;
     color:var(--almost-black-text);
 }
@@ -160,12 +160,12 @@ h1,h2{
        
         flex-direction: row;
         gap:10%;
-        height: 80vh;
+       
     }
     .product-section{
         padding-left:10%;
         padding-right:10%;
-        
+         
     }
     
 }

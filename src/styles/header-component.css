@@ -1,12 +1,12 @@
 .header-part{
     width:100%;
     box-sizing: border-box;
-    padding:2rem;
+    padding:1.25rem 1.5rem;
     
     display:flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 3px solid hsl(230, 53%, 93%);
+    
 }
 .header-part-inner-container{
     width:100%;
@@ -16,11 +16,11 @@
     align-items: center;
 }
 .menu-icon-part,.cart-img-part{
-  height:2rem;  
+  height:1.35rem;  
 }
 .menu-icon-part-new {
-    height: 2rem;
-    width: 2rem;
+    height: 1.35rem;
+    width: 1.35rem;
     display: block;
 
     background-color: var(--gray-text);
@@ -40,7 +40,8 @@
 
 .logo-part,
  .avatar-img-part{
-    height:2.5rem;
+    display:block;
+    height:1.5rem;
 }
 .logo-part{
     padding-bottom: 0.3rem;
@@ -73,7 +74,7 @@
 }
 .cart-img-part-new{
     display: block;
-    width: 2rem;
+    width: 1.75rem;
     height:1.8rem;
     
 
@@ -94,8 +95,8 @@
     position:absolute;
     top:-10px;
     left:45%;
-    padding-top:1px;
-    padding-bottom: 1px;
+    padding-top:5px;
+    padding-bottom: 5px;
     padding-left:11.5px;
     padding-right:11.5px;
     background-color: var(--orange-color);
@@ -107,14 +108,20 @@
 .circle-orange-hide{
     display:none;
 }
-.small-white-text{
+.small-white-text {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 0.75rem;
+    line-height: 1.2;
     font-weight: 700;
-    color:white;
-    font-size: 0.938;
 }
 .avatar-img-part{
-    height:3rem;
-    cursor:pointer;
+     display: block;
+    width: 2.75rem;
+    height: 2.75rem;
+    box-sizing: border-box;
+    cursor: pointer;
     border-radius: 50%;
     border:4px solid var(--body-bg-color);
 }
@@ -129,22 +136,24 @@
         display:none;
     }
     .header-part{
-        padding-left:0;
-        padding-right:0;
-        padding-right:9.5%;
+        padding-top:0;
+        padding-bottom:0;
+        padding-right:7.5%;
         padding-left:5%;
+        
     }
     .avatar-img-part{
-     height:4rem;
-     width:4rem;   
+     height:3rem;
+     width:3rem;   
     }
     .cart-img-part-new{
-    width:2.5rem;
-    height: 2.2rem;
+    width:1.8rem;
+    height: 1.8rem;
     }
 
-    .header-part{
-        padding-bottom:0;
-        padding-top:0;
+   
+    .header-part-inner-container{
+        
+        border-bottom: 2px solid hsl(230, 53%, 93%);
     }
 }

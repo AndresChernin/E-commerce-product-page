@@ -1,4 +1,4 @@
-function HeaderComponentNew({
+function HeaderComponent({
     iconMenuImg,
     iconCloseImg,
     logoImg,
@@ -9,6 +9,7 @@ function HeaderComponentNew({
     handleCartClick,
     numberOfOrders
 }) {
+
     return (
         <header className="header-part">
             <div className="header-part-inner-container">
@@ -36,7 +37,7 @@ function HeaderComponentNew({
                                                   iconCloseImg: iconMenuImg})`}}>
                                             
                         </span>
-                    {/*    <img
+                       {/* <img
                             src={
                                 showVerticalNavigation
                                     ? iconCloseImg
@@ -66,12 +67,12 @@ function HeaderComponentNew({
                 <div className="header-right-part">
                   <button className="button-for-cart"
                    onClick={()=>handleCartClick()}>
-                   {/* <img
+                   {/*  <img
                         src={cartImg}
                         className="cart-img-part"
                         alt="Image of cart"
                     />*/}
-                    <span className="cart-img-part-new"
+                   <span className="cart-img-part-new"
                        style={{
                               maskImage: `url(${cartImg})`,
                               WebkitMaskImage: `url(${cartImg})`

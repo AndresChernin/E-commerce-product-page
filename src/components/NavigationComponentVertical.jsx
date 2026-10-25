@@ -10,19 +10,20 @@ function NavigationComponentVertical({iconMenuCloseImg,handleButtonClick,showMys
                     aria-controls="mobile-navigation"
                     onClick={()=>handleButtonClick()}
                   >
-                    {/*
-                  <img
+                    
+                 {/*  <img
                    src={iconMenuCloseImg}
                    className="menu-icon-close-part"
                    alt=""
                    /> */} 
-                   <span className="menu-icon-close-part-new"
+                  <span className="menu-icon-close-part-new"
                        style={{
                               maskImage: `url(${iconMenuCloseImg})`,
                               WebkitMaskImage: `url(${iconMenuCloseImg})`
                              }}>
 
-                    </span>     
+                    </span>  
+                       
                   </button>
                   <nav className="links-part-vertical" aria-label="Main navigation">
                   

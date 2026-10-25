@@ -13,12 +13,45 @@
     flex-direction: column;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
 }
+.semi-big{
+    font-size:27.5px;
+    font-weight:700;
+}
+.menu-icon-cart-close-part-new{
+    height: 1.5rem;
+    width:1.5rem;
+    display:block;
+    background-color: var(--almost-black-text);
+
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+.menu-button-cart{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+.menu-button-cart:hover .menu-icon-cart-close-part-new {
+    background-color: var(--gray-text);
+}
 .cart-component-header-part{
+    
     width:100%;
     box-sizing: border-box;
     padding:2rem;
     border-bottom: 3px solid var(--hell-gray-text);
+    display:flex;
+    justify-content: space-between;
 }
+/*.cart-close{
+    width:99px;
+    height:10px;
+}*/
 .cart-component-payment-part{
     width:100%;
     box-sizing: border-box;
