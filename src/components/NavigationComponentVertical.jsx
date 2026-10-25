@@ -11,11 +11,7 @@ function NavigationComponentVertical({iconMenuCloseImg,handleButtonClick,showMys
                     onClick={()=>handleButtonClick()}
                   >
                     
-                 {/*  <img
-                   src={iconMenuCloseImg}
-                   className="menu-icon-close-part"
-                   alt=""
-                   /> */} 
+                
                   <span className="menu-icon-close-part-new"
                        style={{
                               maskImage: `url(${iconMenuCloseImg})`,

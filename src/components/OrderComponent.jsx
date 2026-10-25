@@ -12,9 +12,7 @@ function OrderComponent({order, deleteIcon, deleteOrder}){
             </div>
             <button className="order-part-delete-button"
                     onClick={()=>deleteOrder(order.getId())}>
-               {/* <img src={deleteIcon}
-                className="order-part-delete-img"/>
-                */}
+              
                 <span className="order-part-delete-img-new"
                        style={{
                               maskImage: `url(${deleteIcon})`,
