@@ -20,11 +20,7 @@ function CartComponent({orders, deleteImg, deleteOrder, iconMenuCloseImg, closeC
                              }}>
 
                     </span>  
-     {/*<img
-                   src={iconMenuCloseImg}
-                   className="menu-icon-close-part"
-                   alt=""
-     />*/}
+     
    </button>  
  </div>
  <div className="cart-component-lower-part">

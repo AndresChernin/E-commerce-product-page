@@ -48,10 +48,7 @@
     display:flex;
     justify-content: space-between;
 }
-/*.cart-close{
-    width:99px;
-    height:10px;
-}*/
+
 .cart-component-payment-part{
     width:100%;
     box-sizing: border-box;

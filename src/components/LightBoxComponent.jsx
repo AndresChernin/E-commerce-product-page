@@ -25,13 +25,7 @@ function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
                }}>
 
             </span>   
-             {/* <img
-                src={
-                     iconPrev           
-                    }
-                
-                            
-            />  */}
+             
             </button>
             <button className="circle-next-part"
             onClick={()=>handleNextClick(images)}>
@@ -42,13 +36,7 @@ function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
                 }}>
 
                 </span>
-              {/*<img
-                src={
-                     iconNext           
-                    }
-                
-                            
-            /> */} 
+              
             </button>
             <div className="all-small-images">
             {smallImages.map((image, index) => (

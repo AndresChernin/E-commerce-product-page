@@ -26,12 +26,7 @@ function ProductComponent({product, minusImg, plusImg,remImg, number,
                   }}>
 
             </span>   
-                   {/* <img
-                        src={minusImg}
-                        className="logo-minus-part"
-                        
-                    />
-                    */}
+                  
                 </button>
                 <p className="product-number-part">{number}</p>
                 
@@ -44,11 +39,7 @@ function ProductComponent({product, minusImg, plusImg,remImg, number,
                              }}>
 
                     </span>  
-                   {/* <img
-                        src={plusImg}
-                        className="logo-plus-part"
-                        
-                    />*/}
+                 
                 </button>
             </div>
             <div className="add-remove-container">

@@ -144,14 +144,7 @@ h1,h2{
   .main-container{
  gap:3rem;
   }
-    /*.main-container-inner-part {
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, auto);
-
-        gap: 4rem;
-    }*/
+    
     .main-container.menu-open::after {
         display: none;
     }

@@ -17,9 +17,7 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                       }}>
 
                     </span>  
-                    {/* <img src={iconClose}
-                     className="opened-close-icon"/>
-                     */}
+                   
                 </button>
             </div>  
             <button className="opened-button-for-product-image"
@@ -41,13 +39,7 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                }}>
 
             </span>   
-             {/* <img
-                src={
-                     iconPrev           
-                    }
-                
-                            
-            />  */}
+            
             </button>
             <button className="opened-circle-next-part"
             onClick={()=>handleNextClick(bigImages)}>
@@ -58,13 +50,7 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                 }}>
 
                 </span>
-              {/*<img
-                src={
-                     iconNext           
-                    }
-                
-                            
-            /> */} 
+             
             </button>
             </button>
             <div className="all-small-images">

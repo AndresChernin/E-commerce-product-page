@@ -37,15 +37,7 @@ function HeaderComponent({
                                                   iconCloseImg: iconMenuImg})`}}>
                                             
                         </span>
-                       {/* <img
-                            src={
-                                showVerticalNavigation
-                                    ? iconCloseImg
-                                    : iconMenuImg
-                            }
-                            className="menu-icon-part"
-                            alt=""
-                        />*/}
+                       
                     </button>
 
                     <img
@@ -67,11 +59,7 @@ function HeaderComponent({
                 <div className="header-right-part">
                   <button className="button-for-cart"
                    onClick={()=>handleCartClick()}>
-                   {/*  <img
-                        src={cartImg}
-                        className="cart-img-part"
-                        alt="Image of cart"
-                    />*/}
+                  
                    <span className="cart-img-part-new"
                        style={{
                               maskImage: `url(${cartImg})`,
