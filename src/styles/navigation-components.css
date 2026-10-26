@@ -5,13 +5,13 @@
 }
                  
 .horizontal-navigation{
-    border-bottom:3px solid var(--body-bg-color);
+    border-bottom:0.188rem solid var(--body-bg-color);
     padding-block: 1.5rem;
     
     
 }
 .horizontal-navigation:has(a:hover){
-   border-bottom:3px solid var(--orange-color);
+   border-bottom:0.188rem solid var(--orange-color);
 }
 .links-part-vertical{
     display:flex;
