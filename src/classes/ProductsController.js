@@ -40,7 +40,7 @@ class ProductsController{
     const existingOrder=orders.find(
         order=>order.product.id===product.id
     );
-    if(!existingOrder){
+    if(!existingOrder || number <= 0 ){
         return;
     }
     else{
