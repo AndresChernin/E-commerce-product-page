@@ -31,11 +31,11 @@ function HeaderComponent({
                         <span
                          className="menu-icon-part-new"
                          style={{
-                                 maskImage: `url(${showVerticalNavigation? 
-                                                  iconCloseImg: iconMenuImg})`,
-                                 WebkitMaskImage: `url(${showVerticalNavigation? 
-                                                  iconCloseImg: iconMenuImg})`}}>
-                                            
+                          "--icon-url": `url(${showVerticalNavigation
+                                         ? iconCloseImg
+                                         : iconMenuImg})`
+                                }}
+                        >                    
                         </span>
                        
                     </button>
@@ -60,13 +60,13 @@ function HeaderComponent({
                   <button className="button-for-cart"
                    onClick={()=>handleCartClick()}>
                   
-                   <span className="cart-img-part-new"
-                       style={{
-                              maskImage: `url(${cartImg})`,
-                              WebkitMaskImage: `url(${cartImg})`
-                             }}>
-
-                    </span>
+                  <span
+                     className="cart-img-part-new"
+                     style={{
+                             "--icon-url": `url(${cartImg})`
+                            }}
+                  >
+                 </span>
                     <div className={`circle-orange ${
                       numberOfOrders===0? "circle-orange-hide": ""}`}>
                       <p className="small-white-text">{numberOfOrders}</p>

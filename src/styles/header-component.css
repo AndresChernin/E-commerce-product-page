@@ -32,6 +32,8 @@
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
+     mask-image: var(--icon-url);
+    -webkit-mask-image: var(--icon-url);
 }
 
 .menu-button:hover .menu-icon-part-new {
@@ -87,6 +89,8 @@
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     -webkit-mask-size: contain;
+    mask-image: var(--icon-url);
+    -webkit-mask-image: var(--icon-url);
 }
 .button-for-cart:hover .cart-img-part-new {
     background-color: var(--almost-black-text);
