@@ -28,9 +28,10 @@ function CartComponent({orders, deleteImg, deleteOrder, iconMenuCloseImg, closeC
         {orders.length === 0 ? (
                     <p>your cart is empty</p>
                 ) : (
-                    <OrderComponent order={orders[0]}
-                                    deleteIcon={deleteImg}
-                                    deleteOrder={deleteOrder}/>
+                    orders.map((order) => (
+                    <OrderComponent key={order.product.id} order={order}
+                                    deleteIcon={deleteImg} deleteOrder={deleteOrder}/>
+                                          ))
                 )}
    </div>
  <div className="cart-component-payment-part">
