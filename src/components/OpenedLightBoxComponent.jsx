@@ -27,7 +27,7 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                        bigImages[aktIndex]        
                          }
                    className="product-image-part"
-                            
+                  alt={`Product image ${aktIndex + 1}`}          
                  />
                </button>
                 <button className="opened-circle-prev-part"

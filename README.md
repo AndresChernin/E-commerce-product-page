@@ -12,9 +12,24 @@ Screenshot
 
 Links
 
-Live Site: View the live project
+Live Site: 
 
 Frontend Mentor Solution: View my solution
+
+Built with
+
+React
+
+JavaScript
+
+CSS
+
+Flexbox
+
+Responsive design
+
+React components and props
+
 
 My process
 Step 1: Building the Model and Controller
