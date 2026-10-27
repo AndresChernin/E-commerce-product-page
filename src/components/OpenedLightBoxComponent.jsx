@@ -7,51 +7,52 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
     return(
         <section className="opened-light-box-component-part">
          <div className="opened-light-box-inner-component">
-           
-             <button className="opened-button-for-close-icon"
-                onClick={()=>setLightBoxOpen(false)}>
+              <div className="opened-product-image-container">
+
+                 <button className="opened-button-for-close-icon"
+                  onClick={()=>setLightBoxOpen(false)}>
                      <span className="opened-close-icon"
                        style={{
                        maskImage: `url(${iconClose})`,
                        WebkitMaskImage: `url(${iconClose})`
                       }}>
 
-                    </span>  
+                     </span>  
                    
-                </button>
-            <button className="opened-button-for-product-image"
-             onClick={()=>handleBigImageClick()}>
-            <img
-                src={
+                 </button>
+                 <button className="opened-button-for-product-image"
+                 onClick={()=>handleBigImageClick()}>
+                 <img
+                    src={
                        bigImages[aktIndex]        
-                    }
-                className="product-image-part"
+                         }
+                   className="product-image-part"
                             
-            />
-            
-            <button className="opened-circle-prev-part"
-             onClick={()=>handlePrevClick(bigImages)}>
-             <span className="opened-prev-icon"
-             style={{
-                  maskImage: `url(${iconPrev})`,
-                  WebkitMaskImage: `url(${iconPrev})`
-               }}>
-
-            </span>   
-            
-            </button>
-            <button className="opened-circle-next-part"
-            onClick={()=>handleNextClick(bigImages)}>
-                <span className="opened-next-icon"
+                 />
+               </button>
+                <button className="opened-circle-prev-part"
+                onClick={()=>handlePrevClick(bigImages)}>
+                <span className="opened-prev-icon"
                 style={{
+                   maskImage: `url(${iconPrev})`,
+                   WebkitMaskImage: `url(${iconPrev})`
+                 }}>
+
+                 </span>   
+            
+                 </button>
+                <button className="opened-circle-next-part"
+                 onClick={()=>handleNextClick(bigImages)}>
+                 <span className="opened-next-icon"
+                 style={{
                   maskImage: `url(${iconNext})`,
                   WebkitMaskImage: `url(${iconNext})`
                 }}>
 
                 </span>
              
-            </button>
-            </button>
+               </button>
+           </div>
             <div className="all-small-images">
             {smallImages.map((image, index) => (
                     <button
