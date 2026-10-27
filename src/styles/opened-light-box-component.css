@@ -6,45 +6,52 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    
+    padding-top:1%;
+    padding-bottom: 1%;
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 1000;
-    padding-left:30%;
-    padding-right:30%;
-    padding-top:3%;
-    padding-bottom: 3%;
+    
 }
 .opened-light-box-inner-component{
-
-    width:60vh;
+   position: relative;
+    
+    width:100%;
     height:100%;
+    width: min(100%, 32rem);
+    max-height: 100%;
     
     background: none;
     padding:0;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap:2rem;
 }
 .opened-close-sign-container{
-    padding-right: 3rem;
+    
+    box-sizing: border-box;
+    padding-right: 1.5rem;
     width:100%;
     
     display:flex;
     justify-content: flex-end;
 }
 .opened-button-for-close-icon{
+    position: absolute;
  height:2rem;
- width:2.4rem;   
+ width:2.4rem;
+ top:0.1rem; 
+ right:0.1rem;  
  border:none;
  background: none;
  cursor: pointer;
  display:flex;
  justify-content: center;
  align-items: center;
+ z-index:10000;
 }
 
 
@@ -52,7 +59,7 @@
     width: 100%;
     height: 100%;
 
-    background-color:white;
+    background-color: var(--almost-white-gray-text);
 
     mask-repeat: no-repeat;
     mask-position: center;
@@ -64,7 +71,7 @@
 }
 
 .opened-button-for-close-icon:hover .opened-close-icon {
-    background-color: var(--orange-color);
+    background-color: var(--almost-black-text);
 }
 .opened-button-for-product-image{
     
@@ -76,6 +83,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    padding:0;
 }
 .opened-circle-prev-part,
 .opened-circle-next-part{
@@ -93,7 +101,7 @@
 .opened-circle-prev-part{
     position:absolute;
     z-index:50;
-    left:-1.563rem;
+    left: -1.5625rem;;
     top:50%;
     top: 50%;
     transform: translateY(-50%);
@@ -101,7 +109,7 @@
 .opened-circle-next-part{
     position:absolute;
     z-index:50;
-    right:-1.563rem;
+    right: -1.5625rem;;
     top:50%;
     transform: translateY(-50%);
 }
@@ -138,6 +146,7 @@
 }
 
 .opened-all-small-images{
+    
 width: 100%;
 
     display:flex;
@@ -174,9 +183,14 @@ width: 100%;
 }
 
 .all-small-images{
+    
     width: 100%;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
 
    }
+
+ .opened-light-box-component-part .product-image-part{
+    height:70vh;
+ }  

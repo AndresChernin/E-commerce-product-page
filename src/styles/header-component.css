@@ -97,7 +97,7 @@
 }
 .circle-orange{
     position:absolute;
-    top:-0.625;
+    top:-0.625rem;
     left:45%;
     padding-top:0.313rem;
     padding-bottom: 0.313rem;
@@ -147,8 +147,8 @@
         
     }
     .avatar-img-part{
-     height:0.188rem;
-     width:0.188rem;   
+     height:3.5rem;
+     width:3.5rem;   
     }
     .cart-img-part-new{
     width:1.8rem;
