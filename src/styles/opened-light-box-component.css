@@ -39,6 +39,14 @@
     display:flex;
     justify-content: flex-end;
 }
+.opened-product-image-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .opened-button-for-close-icon{
     position: absolute;
  height:2rem;
@@ -77,7 +85,7 @@
     
    position:relative;
     width:100%;
-    border:none;
+    
     
     background:none;
     display:flex;
