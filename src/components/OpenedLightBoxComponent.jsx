@@ -7,19 +7,7 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
     return(
         <section className="opened-light-box-component-part">
          <div className="opened-light-box-inner-component">
-            {/* <div className="opened-close-sign-container">
-                <button className="opened-button-for-close-icon"
-                onClick={()=>setLightBoxOpen(false)}>
-                     <span className="opened-close-icon"
-                       style={{
-                       maskImage: `url(${iconClose})`,
-                       WebkitMaskImage: `url(${iconClose})`
-                      }}>
-
-                    </span>  
-                   
-                </button>
-            </div>*/} 
+           
              <button className="opened-button-for-close-icon"
                 onClick={()=>setLightBoxOpen(false)}>
                      <span className="opened-close-icon"
