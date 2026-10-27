@@ -1,16 +1,80 @@
+import { useEffect, useRef } from "react";
 function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                                  handlePrevClick, handleNextClick, 
                                 iconPrev, iconNext, setIndex, iconClose,
                                 setLightBoxOpen}){
+                                  
     const bigImages=product.getBigImages();
     const smallImages=product.getSmallImages();
+    const closeButtonRef = useRef(null);
+
+useEffect(() => {
+    // Element merken, das vor dem Öffnen den Fokus hatte
+    const previousElement = document.activeElement;
+
+    // Fokus beim Öffnen auf den Schließen-Button setzen
+    closeButtonRef.current?.focus();
+
+    function handleKeyDown(event) {
+        if (event.key === "Escape") {
+            setLightBoxOpen(false);
+            return;
+        }
+
+        if (event.key === "Tab") {
+            const focusableElements = document.querySelector(
+                '[role="dialog"]'
+            )?.querySelectorAll(
+                'button:not(:disabled), [href], input:not(:disabled), ' +
+                'select:not(:disabled), textarea:not(:disabled), ' +
+                '[tabindex]:not([tabindex="-1"])'
+            );
+
+            if (!focusableElements?.length) return;
+
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstElement) {
+                event.preventDefault();
+                lastElement.focus();
+            } else if (
+                !event.shiftKey &&
+                document.activeElement === lastElement
+            ) {
+                event.preventDefault();
+                firstElement.focus();
+            }
+        }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+        document.removeEventListener("keydown", handleKeyDown);
+
+        // Fokus beim Schließen zurückgeben
+        if (previousElement instanceof HTMLElement) {
+            previousElement.focus();
+        }
+    };
+}, [setLightBoxOpen]);
     return(
-        <section className="opened-light-box-component-part">
+        <section
+    className="opened-light-box-component-part"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Product image gallery"
+>
          <div className="opened-light-box-inner-component">
               <div className="opened-product-image-container">
 
-                 <button className="opened-button-for-close-icon"
-                  onClick={()=>setLightBoxOpen(false)}>
+                 <button
+                 ref={closeButtonRef}
+                 className="opened-button-for-close-icon"
+                 onClick={() => setLightBoxOpen(false)}
+                 aria-label="Close product gallery"
+                 >
                      <span className="opened-close-icon"
                        style={{
                        maskImage: `url(${iconClose})`,
