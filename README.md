@@ -1,109 +1,82 @@
-# Frontend Mentor - E-commerce product page
+Frontend Mentor - E-commerce Product Page
 
-![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
+Overview
 
-## Welcome! 👋
+This project is my solution to the E-commerce Product Page challenge on Frontend Mentor.
 
-Thanks for checking out this front-end coding challenge.
+I built a responsive product page for an e-commerce website featuring a product image gallery, quantity controls, and a shopping cart. The goal was to create an interactive user interface while improving my understanding of React components, state management, and CSS layouts.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+Screenshot
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
 
-## The challenge
 
-Your challenge is to build out this e-commerce product page and get it looking as close to the design as possible.
+Links
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+Live Site: View the live project
 
-Your users should be able to:
+Frontend Mentor Solution: View my solution
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Open a lightbox gallery by clicking on the large product image
-- Switch the large product image by clicking on the small thumbnail images
-- Add items to the cart
-- View the cart and remove items from it
+My process
+Step 1: Building the Model and Controller
 
-### Want some support on the challenge? 
+I started by developing the model and controller because the shopping cart needed the underlying functionality to manage orders.
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+In addition to ProductsModel.js and ProductsController.js, I created separate Order and User classes. This allowed me to separate product data, user information, and order management instead of putting all the logic into the React components.
 
-## Where to find everything
+I chose this structure with future extensions in mind. Although the current project focuses on a single product, I wanted the codebase to be easier to extend if I decide to support multiple products or add more shopping cart features later.
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
+Step 2: Creating the Initial View
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`.
+After implementing the model and controller, I created View.html to establish the initial user interface.
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+At this stage, I simulated the behaviour of the cart and lightbox interactions using console.log() statements. This allowed me to test the interaction flow before implementing the actual React components.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+Step 3: Implementing the Interactive Components
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+Next, I implemented CartComponent and OpenedLightBoxComponent to replace the temporary console.log() simulations with actual functionality.
 
-## Using AI coding assistants
+The cart component handles displaying orders and removing them, while the lightbox component provides an interactive product image gallery with navigation controls.
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+After implementing these components, I removed the temporary console.log() statements that I had used during the initial development stage.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+Step 4: Making the Layout Responsive
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+I used CSS media queries (@media) to adapt the layout to different screen sizes.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+This allowed me to adjust the presentation of the product page for mobile and desktop screens and provide a more suitable layout for different devices.
 
-## Building your project
+Step 5: Improving the User Experience
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+I added close buttons to both CartComponent and OpenedLightBoxComponent, allowing users to close the cart and lightbox when they no longer needed them.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+These small additions made the interface more convenient to use and gave users greater control over the displayed panels.
 
-## Deploying your project
+What I learned
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+While building this project, I improved my understanding of how to divide a user interface into reusable React components and pass data and event handlers between them.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+I also gained practical experience with CSS positioning, Flexbox, responsive layouts, and image overlays. Implementing the lightbox helped me understand how to position navigation controls relative to an image while keeping the HTML structure valid.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+Working on the shopping cart helped me practise handling product quantities, updating order data, and conditionally rendering different cart states.
 
-## Create a custom `README.md`
+Challenges I faced
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+One of the most challenging parts was positioning the lightbox controls correctly. I had to consider how absolute positioning relates to parent elements and how the dimensions of an image affect the placement of navigation buttons.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+Another challenge was keeping interactive elements separate in the React component structure. For example, navigation buttons should not be nested inside another button, because nested interactive elements create invalid HTML and can cause unexpected behaviour.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+What I would improve
 
-## Submitting your solution
+If I continue developing this project, I would like to:
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+Extend the cart to support multiple different products.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+Improve accessibility, including keyboard navigation and focus management in the lightbox.
 
-## Sharing your solution
+Test the layout more thoroughly across screen sizes and browsers.
 
-There are multiple places you can share your solution:
+Refine the component structure and make repeated UI patterns easier to maintain.
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+Acknowledgments
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+Challenge by Frontend Mentor.
