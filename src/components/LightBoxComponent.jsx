@@ -13,7 +13,7 @@ function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
                        images[aktIndex]        
                     }
                 className="product-image-part"
-                            
+                alt={`Product image ${aktIndex + 1}`}                            
             />
             </button>
             <button className="circle-prev-part"
