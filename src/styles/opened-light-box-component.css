@@ -103,7 +103,7 @@
     z-index:50;
     left: -1.5625rem;;
     top:50%;
-    top: 50%;
+    
     transform: translateY(-50%);
 }
 .opened-circle-next-part{
