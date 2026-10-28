@@ -1,9 +1,17 @@
 function NavigationComponentVertical({iconMenuCloseImg,handleButtonClick,showMyself}){
+  const closeButtonRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (showMyself) {
+            closeButtonRef.current?.focus();
+        }
+    }, [showMyself]);
     return(
           <div className={`${showMyself?
                   "menu-part-with-close-icon" : "menu-part-with-close-icon-closed"}`}
                 id="mobile-navigation">  
                   <button
+                    ref={closeButtonRef}
                     className="menu-button"
                     aria-label="Close menu"
                     aria-expanded="true"
