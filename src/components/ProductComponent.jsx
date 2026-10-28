@@ -18,7 +18,8 @@ function ProductComponent({product, minusImg, plusImg,remImg, number,
             </div>
             <div className="product-order-part">
                 <button className="product-minus-part"
-                 onClick={()=>decreaseNumber()}>
+                 onClick={()=>decreaseNumber()}
+                  aria-label="Decrease quantity">
                    <span className="minus-icon"
                    style={{
                     maskImage: `url(${minusImg})`,
@@ -31,7 +32,8 @@ function ProductComponent({product, minusImg, plusImg,remImg, number,
                 <p className="product-number-part">{number}</p>
                 
                 <button className="product-plus-part"
-                onClick={()=>increaseNumber()}>
+                onClick={()=>increaseNumber()}
+                 aria-label="Increase quantity">
                      <span className="plus-icon"
                        style={{
                               maskImage: `url(${plusImg})`,
@@ -57,6 +59,7 @@ function ProductComponent({product, minusImg, plusImg,remImg, number,
                     <img
                         src={remImg}
                         className="box-img-part"
+                        alt=""
                     />                   
                     <p className="add-to-cart-text">Remove from cart</p>
                 
