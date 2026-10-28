@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+
 function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                                  handlePrevClick, handleNextClick, 
                                 iconPrev, iconNext, setIndex, iconClose,
@@ -6,9 +6,9 @@ function OpenedLightBoxComponent({product,aktIndex, handleBigImageClick,
                                   
     const bigImages=product.getBigImages();
     const smallImages=product.getSmallImages();
-    const closeButtonRef = useRef(null);
+    const closeButtonRef = React.useRef(null);
 
-useEffect(() => {
+React.useEffect(() => {
     // Element merken, das vor dem Öffnen den Fokus hatte
     const previousElement = document.activeElement;
 
@@ -38,10 +38,7 @@ useEffect(() => {
             if (event.shiftKey && document.activeElement === firstElement) {
                 event.preventDefault();
                 lastElement.focus();
-            } else if (
-                !event.shiftKey &&
-                document.activeElement === lastElement
-            ) {
+            } else if (!event.shiftKey &&document.activeElement === lastElement) {
                 event.preventDefault();
                 firstElement.focus();
             }
