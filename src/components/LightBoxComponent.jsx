@@ -13,11 +13,12 @@ function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
                        images[aktIndex]        
                     }
                 className="product-image-part"
-                alt={`Product image ${aktIndex + 1}`}                            
+                alt={`${product.getTitle()} - view ${aktIndex + 1}`}                           
             />
             </button>
             <button className="circle-prev-part"
-             onClick={()=>handlePrevClick(images)}>
+             onClick={()=>handlePrevClick(images)}
+             aria-label="Previous product image">
              <span className="prev-icon"
              style={{
                   maskImage: `url(${iconPrev})`,
@@ -28,7 +29,8 @@ function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
              
             </button>
             <button className="circle-next-part"
-            onClick={()=>handleNextClick(images)}>
+            onClick={()=>handleNextClick(images)}
+            aria-label="Next product image">
                 <span className="next-icon"
                 style={{
                   maskImage: `url(${iconNext})`,
@@ -48,7 +50,7 @@ function LightBoxComponent({iconPrev, iconNext, product,aktIndex,
                     >
                         <img
                             src={image}
-                            alt={`Product ${index + 1}`}
+                            alt={`${product.getTitle()} - thumbnail ${index + 1}`}
                           className={`small-image 
                                     ${aktIndex===index? "clicked-small-image" :""}`} 
                           />
