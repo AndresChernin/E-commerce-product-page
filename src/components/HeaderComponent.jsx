@@ -7,7 +7,8 @@ function HeaderComponent({
     showVerticalNavigation,
     handleMenuClick,
     handleCartClick,
-    numberOfOrders
+    numberOfOrders,
+    cartOpen
 }) {
 
     return (
@@ -58,7 +59,10 @@ function HeaderComponent({
 
                 <div className="header-right-part">
                   <button className="button-for-cart"
-                   onClick={()=>handleCartClick()}>
+                   onClick={()=>handleCartClick()}
+                   aria-label="Shopping cart"
+                   aria-expanded={cartOpen}
+                    aria-controls="cart-panel">
                   
                   <span
                      className="cart-img-part-new"
@@ -68,7 +72,9 @@ function HeaderComponent({
                   >
                  </span>
                     <div className={`circle-orange ${
-                      numberOfOrders===0? "circle-orange-hide": ""}`}>
+                      numberOfOrders===0? "circle-orange-hide": ""}`}
+                      aria-live="polite"
+                      aria-atomic="true">
                       <p className="small-white-text">{numberOfOrders}</p>
                     </div>
                    </button>

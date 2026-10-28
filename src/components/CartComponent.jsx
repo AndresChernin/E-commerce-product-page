@@ -1,7 +1,8 @@
 function CartComponent({orders, deleteImg, deleteOrder, iconMenuCloseImg, closeCart}){
  return(
 
-<section className="cart-component">
+<section className="cart-component"
+id="cart-panel">
  <div className="cart-component-header-part">
     <p className="black-bold-text semi-big">
         Cart
