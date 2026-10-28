@@ -77,6 +77,9 @@ function HeaderComponent({
                       aria-atomic="true">
                       <p className="small-white-text">{numberOfOrders}</p>
                     </div>
+                    <span className="visually-hidden" aria-live="polite" aria-atomic="true">
+                          Cart updated: {numberOfOrders} items
+                    </span>
                    </button>
                    
                     <img
