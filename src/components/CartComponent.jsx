@@ -9,9 +9,8 @@ id="cart-panel">
     </p>
     <button
                     className="menu-button-cart cart-close"
-                    aria-label="Close menu"
-                    aria-expanded="true"
-                    aria-controls="mobile-navigation"
+                    aria-label="Close cart"
+                    
                     onClick={()=>closeCart()}
                   >
                   <span className="menu-icon-cart-close-part-new"
