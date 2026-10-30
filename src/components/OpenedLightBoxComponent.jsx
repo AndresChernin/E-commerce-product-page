@@ -88,11 +88,12 @@ React.useEffect(() => {
                        bigImages[aktIndex]        
                          }
                    className="product-image-part"
-                  alt={`Product image ${aktIndex + 1}`}          
+                  alt={`${product.getTitle()} - view ${aktIndex + 1}`}          
                  />
                </button>
                 <button className="opened-circle-prev-part"
-                onClick={()=>handlePrevClick(bigImages)}>
+                onClick={()=>handlePrevClick(bigImages)}
+                aria-label="Previous product image">
                 <span className="opened-prev-icon"
                 style={{
                    maskImage: `url(${iconPrev})`,
@@ -103,7 +104,8 @@ React.useEffect(() => {
             
                  </button>
                 <button className="opened-circle-next-part"
-                 onClick={()=>handleNextClick(bigImages)}>
+                 onClick={()=>handleNextClick(bigImages)}
+                 aria-label="Next product image">
                  <span className="opened-next-icon"
                  style={{
                   maskImage: `url(${iconNext})`,
@@ -124,7 +126,7 @@ React.useEffect(() => {
                     >
                         <img
                             src={image}
-                            alt={`Product ${index + 1}`}
+                            alt={`${product.getTitle()} - thumbnail ${index + 1}`}
                           className={`opened-small-image 
                                     ${aktIndex===index? "clicked-small-image" :""}`} 
                           />
